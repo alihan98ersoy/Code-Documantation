@@ -1,0 +1,67 @@
+---
+sidebar_position: 5
+---
+
+# How to deploy a .NET app to Azure
+
+In this section, you'll learn how to deploy your .NET console app that prints "Hello World!" to the console to Azure App Service. Azure App Service is a cloud platform service that hosts web apps, including .NET apps. You'll use Visual Studio Code and the Azure App Service extension to create and configure an App Service and publish your app to it.
+
+## Prerequisites
+
+To follow this tutorial, you need to have the following installed on your computer:
+
+- The .NET SDK
+- Visual Studio Code
+- The C# extension for Visual Studio Code
+- The Azure App Service extension for Visual Studio Code
+- An Azure account with an active subscription. Create an account for free.
+
+You also need the console app that you create in [Create a .NET console application using Visual Studio Code](https://learn.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code).
+
+## Create an App Service
+
+To deploy your app to Azure App Service, you need to create an App Service that will host your app. As part of creating the App Service, you'll also create:
+
+- A new resource group to contain all of the Azure resources for the service.
+- A new hosting plan that specifies the location, size, and features of the web server farm that hosts your app.
+
+Follow these steps to create your App Service using Visual Studio Code and the Azure App Service extension:
+
+1. Open Visual Studio Code and open the folder that contains your console app project.
+2. In the Activity Bar, select the Azure icon to show the AZURE APP SERVICE explorer.
+3. In the AZURE APP SERVICE explorer, select Sign in to Azure... and follow the instructions.
+4. After signing in, select the blue up arrow icon to deploy your app.
+5. Choose Create new Web App.
+6. Enter a globally unique name for your web app, such as MyFirstAzureWebApp-123, and press Enter. The name must be unique across all of Azure.
+7. Select a runtime stack for your web app. For this tutorial, choose .NET Core 6 (LTS).
+8. Select a region for your web app, such as West US 2.
+9. Wait for the deployment to complete. You'll see a notification when it's done.
+
+## Publish your app
+
+After creating your App Service, you can publish your app to it using Visual Studio Code and the Azure App Service extension. Follow these steps to publish your app:
+
+1. In the AZURE APP SERVICE explorer, expand your subscription and select the web app that you created in the previous section.
+2. Right-click on your web app and select Deploy to Web App....
+3. Select Browse and then select the folder that contains your console app project.
+4. Select Yes when prompted to update your configuration to run npm install on the target server.
+5. Wait for the deployment to complete. You'll see a notification when it's done.
+
+## Test your app
+
+After publishing your app, you can test it by accessing its URL in a browser. Follow these steps to test your app:
+
+1. In the AZURE APP SERVICE explorer, right-click on your web app and select Browse Website.
+2. A browser window will open with your web app's URL, such as https://myfirstazurewebapp-123.azurewebsites.net/.
+3. You should see a message saying "Hello World!" in the browser window.
+
+Congratulations! You have successfully deployed your .NET console app to Azure App Service using Visual Studio Code and the Azure App Service extension.
+
+## Next steps
+
+To learn more about deploying .NET apps to Azure App Service, you can follow one of these resources:
+
+- [Deploy ASP.NET Core applications to Azure App Service](https://www.datadoghq.com/blog/deploy-dotnet-core-azure-app-service/)
+- [Quickstart: Deploy an ASP.NET web app - Azure App Service](https://learn.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore)
+- [Deploy ASP.NET Core apps to Azure App Service](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/azure-apps/?view=aspnetcore-7.0)
+- [Migrate your .NET web app or service to Azure App Service](https://learn.microsoft.com/en-us/dotnet/azure/migration/app-service)

@@ -1,0 +1,76 @@
+---
+sidebar_position: 3
+---
+
+# How to debug a .NET app
+
+In this section, you'll learn how to debug a .NET console app that prints "Hello, World!" to the console. You'll use Visual Studio Code and the C# extension to set breakpoints, inspect variables, step through code, and use the debug console.
+
+## Prerequisites
+
+To follow this tutorial, you need to have the following installed on your computer:
+
+- The .NET SDK
+- Visual Studio Code
+- The C# extension for Visual Studio Code
+
+You also need the console app that you create in [Create a .NET console application using Visual Studio Code](https://learn.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code).
+
+## Set a breakpoint
+
+A breakpoint temporarily interrupts the execution of the application before the line with the breakpoint is run. To set a breakpoint, open the Program.cs file and click in the left margin of the code window on the line that displays the name, date, and time. The left margin is to the left of the line numbers. Other ways to set a breakpoint are by pressing F9 or choosing Run > Toggle Breakpoint from the menu while the line of code is selected. Visual Studio Code indicates the line on which the breakpoint is set by displaying a red dot in the left margin.
+
+## Start debugging
+
+To start debugging, open the Debug view by selecting the Debugging icon on the left side menu. Select the green arrow at the top of the pane, next to .NET Core Launch (console). Other ways to start debugging are by pressing F5 or choosing Run > Start Debugging from the menu.
+
+The program will run until it reaches the breakpoint. Then it will pause and show you the current state of the app in the editor. You can see the values of variables in the Variables pane, or hover over them in the code window.
+
+## Use the Debug Console
+
+The Debug Console lets you interact with the application you're debugging. You can evaluate expressions, execute commands, and print messages. To open the Debug Console, choose View > Debug Console from the menu.
+
+In the Debug Console, you can type C# expressions and see their results. For example, try typing `name` and press Enter. You should see the value of the name variable that you entered when running the app.
+
+You can also use commands that start with a dollar sign ($) to control the debugger. For example, try typing `$restart` and press Enter. This will restart the debugging session and run the app again.
+
+## Set a conditional breakpoint
+
+A conditional breakpoint is a breakpoint that only pauses execution when a certain condition is met. This can be useful when you want to debug a specific scenario or case.
+
+To set a conditional breakpoint, right-click on an existing breakpoint and choose Edit Breakpoint from the menu. A text box will appear where you can enter an expression that evaluates to true or false. For example, try entering `name == "Alice"` and press Enter. This will make the breakpoint only trigger when you enter "Alice" as your name.
+
+Run the app again and enter different names. You should see that the breakpoint only pauses execution when you enter "Alice".
+
+## Step through code
+
+When debugging, you can use different commands to step through your code and see how it behaves. These commands are available in the Debug toolbar at the top of the editor, or in the Run menu.
+
+- Step Over (F10) executes the current line of code and moves to the next one.
+- Step Into (F11) executes the current line of code and moves into any method calls that are on that line.
+- Step Out (Shift + F11) executes all remaining lines of code in the current method and returns to where it was called.
+- Continue (F5) resumes execution until it reaches another breakpoint or ends.
+
+Try using these commands to navigate through your code and see how it works.
+
+## Use Release build configuration
+
+Debug and Release are .NET's built-in build configurations. You use Debug for debugging and Release for final release distribution. In Debug configuration, a program compiles with full symbolic debug information and no optimization. Optimization complicates debugging because it changes how source code relates to generated instructions.
+
+The Release configuration of a program has no symbolic debug information and is fully optimized. It runs faster and uses less memory than Debug configuration but cannot be easily debugged.
+
+By default, Visual Studio Code launch settings use Debug build configuration for debugging. To change it to Release build configuration, open .vscode/launch.json and change the value of `configuration` from `Debug` to `Release`:
+
+```json
+"configuration": "Release",
+```
+
+Save your changes and run the app again. You should see that it runs faster and uses less memory, but you cannot inspect variables or set breakpoints.
+
+## Next steps
+
+To learn more about debugging .NET apps, you can follow one of these resources:
+
+- [Debug a .NET console application using Visual Studio](https://learn.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio)
+- [Debugging in Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
+- [Debugging in C#](https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/debugging)

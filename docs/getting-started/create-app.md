@@ -1,0 +1,66 @@
+---
+sidebar_position: 2
+---
+
+
+# How to create a simple .NET app
+
+In this section, you'll learn how to create a simple .NET console app that prints "Hello, World!" to the console. You'll use the .NET SDK and the .NET CLI tools to create and run the app.
+
+## Prerequisites
+
+To follow this tutorial, you need to have the .NET SDK installed on your computer. You can download and install the .NET SDK from [here](https://dotnet.microsoft.com/en-us/download).
+
+You also need a code editor of your choice. You can use Visual Studio, Visual Studio Code, or any other editor that supports .NET development.
+
+## Create the app
+
+First, open a terminal such as PowerShell, Command Prompt, or bash. Navigate to a folder where you want to create your app. Then, type the following command:
+
+```bash
+dotnet new console -o HelloWorld
+```
+
+This command creates a new console app project named "HelloWorld" in a subfolder with the same name. The project contains a single C# file named Program.cs with the following code:
+
+```csharp
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+```
+
+This code defines a namespace called HelloWorld, a class called Program, and a method called Main. The Main method is the entry point of the app, where it writes "Hello World!" to the console using the Console.WriteLine method.
+
+## Run the app
+
+To run the app, navigate to the project folder and type the following command:
+
+```bash
+dotnet run
+```
+
+This command builds and runs the app. You should see the following output:
+
+```bash
+Hello World!
+```
+
+Congratulations! You've created and run your first .NET app.
+
+## Next steps
+
+To learn more about developing .NET apps, you can follow one of these resources:
+
+- [Tutorial: Create a C# ASP.NET Core web app in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-aspnet-core?view=vs-2022)
+- [.NET Tutorial | Hello World in 5 minutes](https://dotnet.microsoft.com/en-us/learn/dotnet/hello-world-tutorial/intro)
+- [Get started with .NET | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/core/get-started)
+
