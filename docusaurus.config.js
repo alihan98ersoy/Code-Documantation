@@ -76,10 +76,16 @@ const config = {
         },
         items: [
           {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            type: "doc",
+            docId: "tutorial/intro",
             position: "left",
-            label: "Docs",
+            label: "Tutorial",
+          },
+          {
+            type: "doc",
+            docId: "exercises/index",
+            position: "left",
+            label: "Exercises",
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
@@ -108,7 +114,6 @@ const config = {
                 label: "Discord",
                 href: "https://discord.io/hmsunityplugin",
               },
-
             ],
           },
           {
