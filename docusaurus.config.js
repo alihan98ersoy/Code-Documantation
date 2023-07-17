@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: ".NET Documentation",
-  tagline: ".NET are cool",
+  title: "Code Conversion Documentation",
+  tagline: "Code is Poetry",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
