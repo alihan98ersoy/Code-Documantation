@@ -1,0 +1,177 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "tsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "globals": {
+        "process": true
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        // buraya istediğiniz kuralları ekleyebilirsiniz
+        // docusaurus için özel kurallar
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "varsIgnorePattern": "^_"
+            }
+        ],
+        "@typescript-eslint/no-use-before-define": [
+            "error",
+            {
+                "functions": false,
+                "classes": false
+            }
+        ],
+        "@typescript-eslint/no-var-requires": [
+            "off"
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": [
+            "off"
+        ],
+        "@typescript-eslint/no-explicit-any": [
+            "off"
+        ],
+        "@typescript-eslint/ban-ts-comment": [
+            "off"
+        ],
+        "@typescript-eslint/ban-types": [
+            "off"
+        ],
+        "@typescript-eslint/no-empty-function": [
+            "off"
+        ],
+        "@typescript-eslint/no-non-null-assertion": [
+            "off"
+        ],
+        "@typescript-eslint/no-empty-interface": [
+            "off"
+        ],
+        "@typescript-eslint/no-inferrable-types": [
+            "off"
+        ],
+        "@typescript-eslint/no-namespace": [
+            "off"
+        ],
+        "@typescript-eslint/no-shadow": [
+            "error"
+        ],
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "default",
+                "format": [
+                    "camelCase"
+                ]
+            },
+            {
+                "selector": "variable",
+                "format": [
+                    "camelCase",
+                    "UPPER_CASE"
+                ],
+            },
+            {
+                "selector": "parameter",
+                "format": [
+                    "camelCase"
+                ],
+                "leadingUnderscore": "allow",
+            },
+            {
+                "selector": "memberLike",
+                "modifiers": [
+                    "private"
+                ],
+                "format": [
+                    "camelCase"
+                ],
+                "leadingUnderscore": "require",
+            },
+            {
+                "selector": "typeLike",
+                "format": [
+                    "PascalCase"
+                ],
+            },
+            {
+                "selector": "enumMember",
+                "format": [
+                    "PascalCase"
+                ],
+            },
+            {
+                "selector": "property",
+                "format": null,
+            },
+            {
+                "selector": "method",
+                "format": null,
+            },
+            {
+                "selector": "accessor",
+                "format": null,
+            }
+        ],
+        // react için özel kurallar
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".tsx"
+                ]
+            }
+        ],
+        "react/prop-types": [
+            "off"
+        ],
+        // airbnb için özel kurallar
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        // diğer kurallar
+        // ...
+    },
+    // modül çözümlemesi için ayarlar
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        }
+    }
+}

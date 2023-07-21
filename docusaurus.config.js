@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "Andronovo-bit", // Usually your GitHub org/user name.
-  projectName: ".NET Docs", // Usually your repo name.
+  projectName: "Code Docs", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -63,15 +63,25 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      "docusaurus2-dotenv",
+      {
+        systemvars: true,
+        path: "./.env", // The path to your environment variables.
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: ".NET Documentation",
+        title: "Code Documentation",
         logo: {
-          alt: ".NET Documentation Logo",
+          alt: "Code Documentation Logo",
           src: "img/logo.svg",
         },
         items: [
@@ -86,6 +96,11 @@ const config = {
             docId: "exercises/index",
             position: "left",
             label: "Exercises",
+          },
+          {
+            href: "/codeeditor",
+            position: "left",
+            label: "Code Editor",
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
@@ -103,7 +118,7 @@ const config = {
             items: [
               {
                 label: "Docs",
-                to: "/docs/intro",
+                to: "/docs/tutorial/intro",
               },
             ],
           },
