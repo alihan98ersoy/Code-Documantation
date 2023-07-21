@@ -1,0 +1,49 @@
+.overlay {
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+    .overlay {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .overlay {
+        width: 60%;
+        height: 60%;
+    }
+}
+
+@media (min-width: 900px) {
+    .overlay {
+        width: 40%;
+        height: 40%;
+    }
+}
+
+textarea {
+    width: 100%;
+    border: 2px solid black;
+    z-index: 10;
+    border-radius: var(--chakra-radii-md);
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0);
+    padding: var(--chakra-space-4);
+    background-color: white;
+    margin-top: var(--chakra-space-2);
+}
+
+textarea:focus {
+    outline: none;
+}
+
+textarea:hover {
+    box-shadow: none;
+}
+
+textarea {
+    transition-duration: var(--chakra-transition-duration-200);
+}
