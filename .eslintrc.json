@@ -19,6 +19,10 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
+    "compilerOptions": {
+        "target": "es5",
+        "downlevelIteration": true
+    },
     "globals": {
         "process": true
     },

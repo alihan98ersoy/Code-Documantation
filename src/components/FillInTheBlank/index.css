@@ -1,0 +1,36 @@
+.FillInTheBlank {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px #ccc;
+
+}
+
+.FillInTheBlank p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.FillInTheBlank ::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.FillInTheBlank :focus {
+  outline: none;
+}
+
+.FillInTheBlank :hover
+{
+  transform: scale(1.01);
+}
