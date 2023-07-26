@@ -1,0 +1,206 @@
+[
+  {
+    "questionText": "What is the name of the C# keyword that is used to declare a variable?",
+    "answerOptions": [
+      { "answerText": "var", "isCorrect": true },
+      { "answerText": "let", "isCorrect": false },
+      { "answerText": "const", "isCorrect": false },
+      { "answerText": "static", "isCorrect": false }
+    ]
+  },
+  {
+    "questionText": "What is the difference between a static and an instance variable?",
+    "answerOptions": [
+      {
+        "answerText": "A static variable is shared by all instances of a class, while an instance variable is unique to each instance.",
+        "isCorrect": true
+      },
+      {
+        "answerText": "A static variable is declared with the `static` keyword, while an instance variable is declared without the `static` keyword.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "A static variable is always initialized, while an instance variable may or may not be initialized.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "A static variable cannot be accessed from an instance method, while an instance variable can be accessed from an instance method.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is the difference between a method and a function?",
+    "answerOptions": [
+      {
+        "answerText": "A method is a member of a class, while a function is not.",
+        "isCorrect": true
+      },
+      {
+        "answerText": "A method can be called from within the class it is defined in, while a function cannot.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "A method can return a value, while a function cannot.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "A method can be overloaded, while a function cannot.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is the difference between an abstract class and an interface?",
+    "answerOptions": [
+      {
+        "answerText": "An abstract class can have concrete methods, while an interface cannot.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "An abstract class can be instantiated, while an interface cannot.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "An abstract class can inherit from other classes, while an interface cannot.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "An interface can inherit from other interfaces, while an abstract class cannot.",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "questionText": "What is the `Console.WriteLine()` method used for?",
+    "answerOptions": [
+      { "answerText": "To write a string to the console.", "isCorrect": true },
+      {
+        "answerText": "To read a string from the console.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "To execute a command in the console.",
+        "isCorrect": false
+      },
+      { "answerText": "To create a new console window.", "isCorrect": false }
+    ]
+  },
+  {
+    "questionText": "What is the `System.DateTime` class used for?",
+    "answerOptions": [
+      { "answerText": "To represent a date and time.", "isCorrect": true },
+      { "answerText": "To represent a number.", "isCorrect": false },
+      { "answerText": "To represent a string.", "isCorrect": false },
+      {
+        "answerText": "To represent a collection of objects.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is the `foreach` loop used for?",
+    "answerOptions": [
+      {
+        "answerText": "To iterate through a collection of objects.",
+        "isCorrect": true
+      },
+      {
+        "answerText": "To execute a block of code a specified number of times.",
+        "isCorrect": false
+      },
+      { "answerText": "To break out of a loop.", "isCorrect": false },
+      {
+        "answerText": "To continue to the next iteration of a loop.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is the `try-catch` block used for?",
+    "answerOptions": [
+      { "answerText": "To handle exceptions.", "isCorrect": true },
+      {
+        "answerText": "To execute a block of code a specified number of times.",
+        "isCorrect": false
+      },
+      { "answerText": "To break out of a loop.", "isCorrect": false },
+      {
+        "answerText": "To continue to the next iteration of a loop.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is the difference between `null` and `undefined` in C#?",
+    "answerOptions": [
+      {
+        "answerText": "`null` represents a value that is not defined, while `undefined` represents a value that has not been initialized.",
+        "isCorrect": true
+      },
+      {
+        "answerText": "`null` can be assigned to any type, while `undefined` can only be assigned to the `string` type.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "`null` can be used in expressions, while `undefined` cannot.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "`null` is a keyword, while `undefined` is not.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is the difference between `string` and `string[]` in C#?",
+    "answerOptions": [
+      {
+        "answerText": "A `string` is a single value, while a `string[]` is an array of strings.",
+        "isCorrect": true
+      },
+      {
+        "answerText": "A `string` can be used in expressions, while a `string[]` cannot.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "A `string` is a keyword, while a `string[]` is not.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "A `string` is always immutable, while a `string[]` can be modified.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is the `object` type in C#?",
+    "answerOptions": [
+      {
+        "answerText": "The `object` type is the base type of all other types in C#.",
+        "isCorrect": true
+      },
+      {
+        "answerText": "The `object` type is used to represent a generic object.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "The `object` type is used to represent a collection of objects.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "The `object` type is used to represent a reference to an object.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is the `new` keyword used for in C#?",
+    "answerOptions": [
+      { "answerText": "To create a new object.", "isCorrect": true },
+      { "answerText": "To initialize a variable.", "isCorrect": false },
+      { "answerText": "To call a method.", "isCorrect": false },
+      { "answerText": "To return from a function.", "isCorrect": false }
+    ]
+  }
+]

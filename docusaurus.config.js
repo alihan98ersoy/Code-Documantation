@@ -93,7 +93,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "exercises/index",
+            docId: "exercises/welcome-to-exercises",
             position: "left",
             label: "Exercises",
           },

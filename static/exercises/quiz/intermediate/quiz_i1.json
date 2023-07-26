@@ -1,0 +1,173 @@
+[
+  {
+    "questionText": "What is the role of the `using` keyword in C#?",
+    "answerOptions": [
+      { "answerText": "To create an alias for a name.", "isCorrect": false },
+      { "answerText": "Include a library in the code.", "isCorrect": false },
+      {
+        "answerText": "Passthrough to a different namespace.",
+        "isCorrect": false
+      },
+      { "answerText": "Include a namespace in the code.", "isCorrect": true }
+    ]
+  },
+  {
+    "questionText": "What does `private` denote in C#?",
+    "answerOptions": [
+      {
+        "answerText": "Access limited to the same method.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "Class accessible to any code in assembly.",
+        "isCorrect": false
+      },
+      { "answerText": "Access limited to contain class.", "isCorrect": true },
+      {
+        "answerText": "Access limited to classes in the same package.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is the role of Interface in C#?",
+    "answerOptions": [
+      { "answerText": "Control access to methods.", "isCorrect": false },
+      { "answerText": "For multilevel class inheritance.", "isCorrect": false },
+      { "answerText": "To implement methods.", "isCorrect": false },
+      {
+        "answerText": "To provide a contract for classes to implement.",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "questionText": "What does the `sealed` keyword do in C#?",
+    "answerOptions": [
+      {
+        "answerText": "Seals a class so it cannot be extended.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "Seals an object so it cannot be changed.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "Prevents a class from being inherited.",
+        "isCorrect": true
+      },
+      {
+        "answerText": "Seals a method so it cannot be overridden.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "In C#, what is a `delegate` used for?",
+    "answerOptions": [
+      {
+        "answerText": "To create a reference to an object.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "To create a variable that can hold any type of value.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "To create variable that can hold a reference to a method.",
+        "isCorrect": true
+      },
+      {
+        "answerText": "To declare a variable that cannot be changed.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is the role of `null` in C#?",
+    "answerOptions": [
+      {
+        "answerText": "Specifies that a value type does not contain any value.",
+        "isCorrect": false
+      },
+      { "answerText": "Used to terminate a string.", "isCorrect": false },
+      {
+        "answerText": "Specifies that a reference type does not point to any object.",
+        "isCorrect": true
+      },
+      { "answerText": "Used to terminate an array.", "isCorrect": false }
+    ]
+  },
+  {
+    "questionText": "In a C# switch statement, what is the `default` case used for?",
+    "answerOptions": [
+      {
+        "answerText": "Set a default value for a variable.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "To specify the default behavior of a method.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "Executed when no match is found in the switch cases.",
+        "isCorrect": true
+      },
+      {
+        "answerText": "To set a default value for an array.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is the role of the `override` keyword in C#?",
+    "answerOptions": [
+      {
+        "answerText": "To override a class's constructor.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "To replace a base class method via inheriting class.",
+        "isCorrect": true
+      },
+      { "answerText": "To override a class's properties.", "isCorrect": false },
+      {
+        "answerText": "To create an override for an object.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is Boxing in C#?",
+    "answerOptions": [
+      { "answerText": "Converting an integer to a float.", "isCorrect": false },
+      { "answerText": "Converting a float to an integer.", "isCorrect": false },
+      {
+        "answerText": "Converting a reference type to a value type.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "Converting a value type to a reference type.",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "questionText": "In C#, what is the `StringBuilder` class used for?",
+    "answerOptions": [
+      {
+        "answerText": "Used to push and pop strings in a LIFO (last in, first out) style.",
+        "isCorrect": false
+      },
+      { "answerText": "Used for string comparisons.", "isCorrect": false },
+      {
+        "answerText": "Dynamically build and manipulate strings, more efficient for string concatenation.",
+        "isCorrect": true
+      },
+      {
+        "answerText": "Used for string manipulation but less efficient.",
+        "isCorrect": false
+      }
+    ]
+  }
+]

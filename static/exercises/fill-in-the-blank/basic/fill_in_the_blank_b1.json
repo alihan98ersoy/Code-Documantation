@@ -1,0 +1,52 @@
+[
+  {
+    "sentence": "The ___ keyword is used to declare a constant in C#.",
+    "answers": ["const", "public", "void", "static", "new"],
+    "correctAnswer": ["const"]
+  },
+  {
+    "sentence": "In C#, a ___ is a group of code statements which are surrounded by curly braces.",
+    "answers": ["method", "block", "class", "namespace", "object"],
+    "correctAnswer": ["block"]
+  },
+  {
+    "sentence": "C# offers ___ type to represent floating point values.",
+    "answers": ["float", "int", "double", "decimal", "string"],
+    "correctAnswer": ["float", "double", "decimal"]
+  },
+  {
+    "sentence": "The ___ keyword in C# is used to encapsulate and protect variables from outside code.",
+    "answers": ["public", "private", "protected", "internal", "sealed"],
+    "correctAnswer": ["private"]
+  },
+  {
+    "sentence": "___ member function of a class is called when an object of that class is instantiated.",
+    "answers": ["Constructor", "Destructor", "Accessor", "Mutator", "Instance"],
+    "correctAnswer": ["Constructor"]
+  },
+  {
+    "sentence": "In C#, ___ assigns the same value to multiple variables at once.",
+    "answers": ["multiple assignment", "tuple", "array", "loop", "thread"],
+    "correctAnswer": ["multiple assignment"]
+  },
+  {
+    "sentence": "In C#, the ___ statement is used to terminate a loop or switch statement.",
+    "answers": ["break", "continue", "return", "exit", "yield"],
+    "correctAnswer": ["break"]
+  },
+  {
+    "sentence": "The keyword ___ in C# is used for memory management to release unmanaged resources.",
+    "answers": ["new", "delete", "malloc", "using", "dispose"],
+    "correctAnswer": ["using"]
+  },
+  {
+    "sentence": "C# uses the ___ keyword to implement polymorphism.",
+    "answers": ["var", "virtual", "override", "switch", "abstract"],
+    "correctAnswer": ["virtual", "override"]
+  },
+  {
+    "sentence": "___ is a feature in C# that allows you to group related operations in an atomic way.",
+    "answers": ["Lock", "Monitor", "Transaction", "Encapsulation", "Thread"],
+    "correctAnswer": ["Transaction"]
+  }
+]

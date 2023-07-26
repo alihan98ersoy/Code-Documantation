@@ -1,0 +1,23 @@
+---
+sidebar_position: 1
+---
+
+# Exercise 1
+
+## Introduction
+
+import {ExercisesProps} from "@site/src/components/Exercises";
+import Exercises from "@site/src/components/Exercises";
+import FillInTheBlank_1 from "@site/static/exercises/fill-in-the-blank/intermediate/fill_in_the_blank_i1.json";
+
+export function GetExercise (){
+  const exercises = {
+    type: "FillInTheBlank",
+    data: FillInTheBlank_1,
+  };
+  return (
+      <Exercises type={exercises.type} data={exercises.data} />
+  );
+}
+
+<GetExercise/>

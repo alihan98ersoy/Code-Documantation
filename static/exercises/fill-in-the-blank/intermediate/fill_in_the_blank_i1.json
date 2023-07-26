@@ -1,0 +1,37 @@
+[
+  {
+    "sentence": "___ is a keyword used to hide a base class method to make it give a new implementation.",
+    "answers": ["abstract", "virtual", "sealed", "new", "override"],
+    "correctAnswer": ["new"]
+  },
+  {
+    "sentence": "The ___ keywords are used to control the accessibility of a type or member when deriving classes or interfaces.",
+    "answers": ["internal", "public", "private", "protected", "readonly"],
+    "correctAnswer": ["protected"]
+  },
+  {
+    "sentence": "When C# code is compiled, the result is ___ code, which is executed by the CLR in the .NET Framework.",
+    "answers": ["byte", "source", "compiled", "MSIL (Microsoft Intermediate Language)", "ASCII"],
+    "correctAnswer": ["MSIL (Microsoft Intermediate Language)"]
+  },
+  {
+    "sentence": "C# supports multiple types of ___ to facilitate error handling and debugging.",
+    "answers": ["namespaces", "exceptions", "operators", "classes", "arrays"],
+    "correctAnswer": ["exceptions"]
+  },
+  {
+    "sentence": "In C#, the ___ method is invoked when an instance of a class is recycled by the garbage collector.",
+    "answers": ["finalize", "delete", "dispose", "reset", "remove"],
+    "correctAnswer": ["finalize"]
+  },
+  {
+    "sentence": "___ is a framework in C# for building asynchronous operations, which returns a Task or Task<T>.",
+    "answers": ["ADO.NET", "LINQ", "Async/Await", "Entity Framework", "SignalR"],
+    "correctAnswer": ["Async/Await"]
+  },
+  {
+    "sentence": "To enable deep cloning of objects in C#, one common approach is to use ___ serialization.",
+    "answers": ["JSON", "Binary", "XML", "SOAP", "YAML"],
+    "correctAnswer": ["Binary"]
+  }
+]
