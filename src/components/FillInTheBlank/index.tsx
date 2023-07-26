@@ -43,6 +43,10 @@ const FillInTheBlank: React.FC<FillInTheBlankProps> = ({ questions }) => {
     setShowResults(true);
   };
 
+  function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+  }
+
   const nextQuestion = () => {
     if (questionIndex < questions.length - 1) {
       setQuestionIndex((prevIndex) => prevIndex + 1); // move to next question
@@ -53,7 +57,7 @@ const FillInTheBlank: React.FC<FillInTheBlankProps> = ({ questions }) => {
       console.log(`Your score is ${userScore} out of ${questions.length}`);
     }
   };
-
+  
   const restartQuiz = () => {
     setQuestionIndex(0); // go back to first question
     setUserAnswers({}); // reset user answers
@@ -79,8 +83,8 @@ const FillInTheBlank: React.FC<FillInTheBlankProps> = ({ questions }) => {
               answers={currentQuestion.answers}
               question={currentQuestion}
               showResults={showResults}
-              index = {questionIndex}
-              totalQuestions = {questions.length}
+              index={questionIndex}
+              totalQuestions={questions.length}
             />
           </Grid>
           <Grid item xs={12} md={4} sx={{ order: { xs: 1, md: 2 } }}>
@@ -90,11 +94,11 @@ const FillInTheBlank: React.FC<FillInTheBlankProps> = ({ questions }) => {
               showResults={showResults}
             />
           </Grid>
-          <Grid item xs={12} sx={{ order: { xs: 3, md: 3 } }}>
-            {!showResults && (
+          <Grid item xs={12} sx={{ order: { xs: 3, md: 3 }, margin: "1rem" }}>
+            {!showResults && !isEmpty(userAnswers) && (
               <Button onClick={checkAnswers}>Check Answers</Button>
             )}
-            {showResults && (
+            {(showResults && questionIndex < questions.length - 1) && (
               <Button onClick={nextQuestion}>Next Question</Button>
             )}
             {questionIndex === questions.length - 1 && (

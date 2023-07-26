@@ -35,6 +35,7 @@ export const Sentence = ({
       sx={{
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
       }}
     >
       {/* Dinamik hale getirilecek */}
@@ -45,14 +46,13 @@ export const Sentence = ({
         sx={{
           flexDirection: "row",
           wordSpacing: 1.5,
-          wrap: "wrap",
           spacing: 1,
           alignItems: "center",
           padding: "0.5rem",
           fontSize: isMobile ? "0.5rem" : isTablet ? "1.2rem" : "1.4rem", // adjust font size based on device size
         }}
       >
-        {sentenceParts.map((part, index) => (
+        {sentenceParts.map((part, index) => (       
           <React.Fragment key={index}>
             <Typography variant="body1" sx={{ fontSize: "1.2rem" }}>
               {part}

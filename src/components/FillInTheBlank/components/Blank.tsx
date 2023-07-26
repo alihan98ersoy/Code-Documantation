@@ -49,7 +49,7 @@ export const Blank = ({
     // Dispatch a delete action to update the state
     dispatch({ type: "delete" });
     // Update the parent state as well
-    setUserAnswer((prev) => ({ ...prev, [`blank_${index}`]: "" }));
+    setUserAnswer(() => ({}));
   };
 
   const getIcon = () => {
@@ -97,7 +97,7 @@ export const Blank = ({
           {userAnswer ? (
             <Chip // using Chip component
               label={answers.find((answer) => answer === userAnswer)}
-              //   onDelete={handleDelete}
+              onDelete={handleDelete}
               color="primary"
               variant="outlined"
             />

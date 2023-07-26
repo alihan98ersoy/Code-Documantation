@@ -19,7 +19,15 @@ export const AnswerList: React.FC<AnswerListProps> = ({
   showResults,
 }) => {
   return (
-    <Box sx={{ border: "1px dashed lightgray", margin: "0.5rem", display:"Grid"}}>
+    <Box
+      sx={{
+        border: "1px dashed lightgray",
+        margin: "0.5rem",
+        display: "Grid",
+        width: "max-content",
+        minWidth: "50vh",
+      }}
+    >
       <Typography variant="h6" gutterBottom></Typography>
       <Droppable droppableId="answers">
         {(provided) => (
@@ -27,7 +35,11 @@ export const AnswerList: React.FC<AnswerListProps> = ({
             ref={provided.innerRef}
             {...provided.droppableProps}
             spacing={1}
-            sx={{ padding: "0.5em" , display:"Grid", gridTemplateColumns:"repeat(2, 1fr)"}}
+            sx={{
+              padding: "0.5em",
+              display: "Grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+            }}
           >
             {answers.map((answer, index) => (
               <Draggable key={answer} draggableId={answer} index={index}>
