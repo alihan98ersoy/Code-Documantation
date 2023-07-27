@@ -4,6 +4,7 @@ import React from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import { languageOptions } from "./constants/languageOptions";
 
+
 // Define the props type
 type Props = {
   onSelectChange: (selectedOption: Language) => void;
@@ -15,11 +16,12 @@ type Language = {
   label: string;
 };
 
+
 const LanguagesDropdown: React.FC<Props> = ({ onSelectChange }) => {
   return (
     <Autocomplete
       color="primary"
-      sx={{ width: 280, boxShadow: 10, }}
+      sx={{ width: 280, boxShadow: 10, backgroundColor: "#fff", mr:2,"@media (max-width: 767px)": { mb: 2, mr:0 } }}
       options={languageOptions}
       getOptionLabel={(option) => option.label}
       defaultValue={languageOptions[0]}

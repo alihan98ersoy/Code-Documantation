@@ -1,0 +1,14 @@
+[
+  {
+    "language_id":51,
+    "language_name": "csharp",
+    "code": "using System;\n\nnamespace HelloWorld\n{\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.WriteLine(\"Hello World!\");\n        }\n    }\n}"
+  },
+
+  {
+    "language_id":54,
+    "language_name": "cpp",
+    "code": "#include <iostream>\n#include <string>\n\nusing namespace std;\n\nint main()\n{\n    cout << \"Hello World!\" << endl;\n    return 0;\n}"
+  }
+
+]

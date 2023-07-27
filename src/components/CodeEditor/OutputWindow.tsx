@@ -47,7 +47,7 @@ const OutputWindow: React.FC<OutputDetailsProps> = (outputDetails) => {
 
   return (
     <>
-      <Typography variant="h3" sx={{ color: "gradient.primary" }} mb={2}>
+      <Typography variant="h4" sx={{ color: "gradient.primary" }} mb={2}>
         Output
       </Typography>
       <Stack

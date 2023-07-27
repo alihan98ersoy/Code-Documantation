@@ -11,16 +11,31 @@ import CustomInput from "./CustomInput";
 import ThemeDropdown from "./ThemeDropdown";
 import LanguagesDropdown from "./LanguageDropdown";
 // Import the Snackbar and Alert components from MUI
-import { Snackbar, Alert, Box, Stack, Button } from "@mui/material";
+import {
+  Snackbar,
+  Alert,
+  Box,
+  Stack,
+  Button,
+  Typography,
+  Paper,
+} from "@mui/material";
 import { OutputDetailsProps } from "./interface/OutputDetailsProps";
 import OutputDetails from "./OutputDetails";
+import {
+  GetExampleLanguageCode,
+  ExampleCode,
+} from "./utils/getExampleLanguageCode";
 
-const codeDefault = `// some comment`;
+const example_codes = GetExampleLanguageCode();
 
 const Landing: React.FC = () => {
-  const [code, setCode] = useState(codeDefault);
+  const [code, setCode] = useState("");
   const [customInput, setCustomInput] = useState("");
   const [outputDetails, setOutputDetails] = useState<OutputDetailsProps>(null);
+  const [exampleCodes, setExampleCodes] = useState<ExampleCode[] | null>(
+    example_codes
+  );
 
   const [processing, setProcessing] = useState(null);
   const [theme, setTheme] = useState<Theme | null>(null);
@@ -33,6 +48,18 @@ const Landing: React.FC = () => {
     console.log("selected Option...", sl);
     setLanguage(sl);
   };
+
+  useEffect(() => {
+    if (exampleCodes) {
+      const exampleCode = exampleCodes.filter(
+        (ec) => ec.language_id === language?.id
+      );
+      if (exampleCode.length > 0) {
+        setCode(exampleCode[0].code);
+      }
+    }
+    console.log("code", code);
+  }, [language, exampleCodes]);
 
   useEffect(() => {
     if (enterPress && ctrlPress) {
@@ -145,7 +172,7 @@ const Landing: React.FC = () => {
           checkStatus(token);
         }, 2000);
         return;
-      }else{
+      } else {
         setProcessing(false);
         setOutputDetails(response.data);
         showErrorSnackbar(`Something went wrong! Please try again.`);
@@ -253,98 +280,120 @@ const Landing: React.FC = () => {
           {message}
         </Alert>
       </Snackbar>
-      <Box sx={{ height: "4", width: "100%", bgcolor: "gradient.secondary" }} />
-      <Stack
-        direction="row"
-        spacing={4}
-        px={4}
-        py={4}
-        left={0}
-        right={0}
+      <Typography
+        variant="h2"
         sx={{
-          "@media (max-width: 600px)": {
-            flexDirection: "column",
-            alignItems: "center",
-          },
+          textAlign: "center",
+          mt: 4,
+          fontWeight: "bold",
+          textShadow: "2px 2px 0px rgba(0,0,0,0.2)",
         }}
       >
-        <LanguagesDropdown onSelectChange={onSelectChange} />
-        <ThemeDropdown handleThemeChange={handleThemeChange} theme={theme} />
-      </Stack>
-      <Stack
-        direction="row"
-        spacing={4}
-        px={4}
-        py={4}
-        alignItems="start"
+        Basic Code Editor
+      </Typography>
+      <Paper // using Paper component
         sx={{
-          "@media (max-width: 900px)": {
-            flexDirection: "column",
-            alignItems: "center",
-          },
+          display: "flex",
+          flexDirection: "column",
+          width: "95%",
+          margin: "auto",
+          padding: 3,
+          borderRadius: 3,
+          boxShadow: 3,
         }}
       >
-        <Box
+        <Stack
+          direction="row"
+          px={4}
+          py={4}
+          left={0}
+          right={0}
           sx={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "start",
-          }}
-        >
-          <CodeEditorWindow
-            code={code}
-            onChange={onChange}
-            language={language?.value}
-            theme={theme?.value}
-          />
-        </Box>
-
-        <Box
-          sx={{
-            flexShrink: 0,
-            width: "30%",
-            display: "flex",
-            flexDirection: "column",
-            "@media (max-width: 900px)": {
-              width: "100%",
-              mt: 4,
+            "@media (max-width: 600px)": {
+              flexDirection: "column",
+              alignItems: "center",
             },
           }}
         >
-          <OutputWindow {...outputDetails} />
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <CustomInput
+          <LanguagesDropdown onSelectChange={onSelectChange} />
+          <ThemeDropdown handleThemeChange={handleThemeChange} theme={theme} />
+        </Stack>
+        <Stack
+          direction="row"
+          px={4}
+          py={4}
+          alignItems="start"
+          sx={{
+            "@media (max-width: 900px)": {
+              flexDirection: "column",
+              alignItems: "center",
+              display: "contents",
+            },
+          }}
+        >
+          <Box
+            sx={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "start",
+            }}
+          >
+            <CodeEditorWindow
+              code={code}
+              onChange={onChange}
+              language={language?.value}
+              theme={theme?.value}
+            />
+          </Box>
+
+          <Box
+            sx={{
+              flexShrink: 0,
+              width: "30%",
+              marginLeft: 4,
+              display: "flex",
+              flexDirection: "column",
+              "@media (max-width: 900px)": {
+                width: "100%",
+                ml: 0,
+              },
+            }}
+          >
+            <OutputWindow {...outputDetails} />
+            <Box sx={{ display: "flex", flexDirection: "column" }}>
+              {/* <CustomInput
               customInput={customInput}
               setCustomInput={setCustomInput}
-            />
-            <Button
-              onClick={handleCompile}
-              disabled={!code}
-              sx={{
-                mt: 4,
-                border: 2,
-                borderColor: "black",
-                zIndex: 10,
-                borderRadius: "md",
-                boxShadow: "5px 5px 0px 0px rgba(0,0,0)",
-                px: 4,
-                py: 2,
-                "&.hover": {
-                  boxShadow: "none",
-                },
-                transition: "duration-200",
-                bgcolor: "white",
-                flexShrink: 0,
-                opacity: !code ? 0.5 : 1,
-              }}
-            >
-              {processing ? "Processing..." : "Compile and Execute"}
-            </Button>
+            /> */}
+              <Button
+                onClick={handleCompile}
+                disabled={!code}
+                sx={{
+                  mt: 4,
+                  border: 2,
+                  borderColor: "black",
+                  zIndex: 10,
+                  borderRadius: "md",
+                  boxShadow: "5px 5px 0px 0px rgba(0,0,0)",
+                  px: 4,
+                  py: 2,
+                  "&.hover": {
+                    boxShadow: "none",
+                  },
+                  transition: "duration-200",
+                  bgcolor: "white",
+                  flexShrink: 0,
+                  opacity: !code ? 0.5 : 1,
+                }}
+              >
+                {processing ? "Processing..." : "Compile and Execute"}
+              </Button>
+            </Box>
+            {outputDetails && <OutputDetails {...outputDetails} />}
           </Box>
-          {outputDetails && <OutputDetails {...outputDetails} />}
-        </Box>
-      </Stack>
+        </Stack>
+      </Paper>
     </>
   );
 };

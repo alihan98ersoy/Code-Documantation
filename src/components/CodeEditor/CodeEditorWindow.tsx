@@ -1,6 +1,6 @@
 // CodeEditorWindow.tsx
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Editor from "@monaco-editor/react";
 
@@ -14,22 +14,16 @@ type Props = {
   theme: string;
 };
 
-const CodeEditorWindow: React.FC<Props> = ({
-  onChange,
-  language,
-  code,
-  theme,
-}) => {
-  const [value, setValue] = useState(code || "");
-
+const CodeEditorWindow = ({ onChange, language, code, theme }: Props) => {
+  const value = code;
   const handleEditorChange = (value: string) => {
-    setValue(value);
+    code = value;
     onChange("code", value);
   };
 
   return (
     <>
-      <Typography variant="h3" sx={{ color: "gradient.primary" }} mb={2}>
+      <Typography variant="h4" sx={{ color: "gradient.primary" }} mb={2}>
         Code Editor
       </Typography>
       <Box
@@ -48,7 +42,7 @@ const CodeEditorWindow: React.FC<Props> = ({
           language={language || "csharp"}
           value={value}
           theme={theme}
-          defaultValue="// some comment"
+          defaultValue={code}
           onChange={handleEditorChange}
         />
       </Box>

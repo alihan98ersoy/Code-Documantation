@@ -77,6 +77,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
+      colorMode: {
+        defaultMode: "light",
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
       image: "img/docusaurus-social-card.jpg",
       navbar: {
         title: "Code Documentation",
