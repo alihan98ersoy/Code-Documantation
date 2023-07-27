@@ -3,93 +3,157 @@ sidebar_position: 2
 ---
 
 
-# Introduction to C++
+# C++ Tutorial
 
-.NET is a software framework developed by Microsoft that runs primarily on Microsoft Windows. It provides a comprehensive set of libraries, tools, and programming languages that allow software developers to build a wide variety of applications.
-[Image of .NET framework logo]
+C++ is a powerful and versatile programming language that can be used to create applications, games, operating systems, embedded systems, and more. C++ is an extension of the C language, with additional features such as object-oriented programming, templates, exceptions, and smart pointers. C++ is one of the most widely used languages in the world, and has influenced many other languages such as Java, C#, and Python.
 
-.NET is a free and open-source framework, and it is used by millions of developers around the world. It is a powerful and flexible platform that can be used to build everything from simple console applications to complex web applications.
+In this tutorial, you will learn the basics of C++ and how to write your own programs using this language. You will also learn some of the advanced topics of C++, such as inheritance, polymorphism, abstract classes, and STL. This tutorial assumes that you have some prior knowledge of C or another programming language, but you don't need to be an expert to follow along.
 
-This documentation will provide you with an introduction to .NET. It will cover the basics of the framework, such as its architecture, programming languages, and libraries. It will also provide you with some hands-on tutorials that will help you get started with .NET development.
+We hope that this tutorial will help you learn C++ in a fun and easy way. Happy coding! 😊
 
-By the end of this documentation, you will have a good understanding of .NET and be able to start building your own applications.
+## Introduction
 
-## What is .NET?
+C++ is a general-purpose programming language that supports multiple paradigms such as procedural,
+object-oriented,
+generic,
+and functional programming. It was created by Bjarne Stroustrup at Bell Labs in 1979 as an extension of the C language,
+which he called "C with Classes". He later renamed it to "C++" in 1983,
+signifying the increment operator ++ as a metaphor for the language's evolution.
 
-.NET is a software framework that provides a standard set of programming languages, libraries, and tools that can be used to build a variety of applications. It is a cross-platform framework, which means that it can be used to build applications that run on Windows, macOS, Linux, and other operating systems.
-[Image of .NET cross-platform logo]
+C++ inherits most of the syntax and features of C,
+such as low-level memory management,
+pointers,
+arrays,
+structs,
+and unions. However,
+it also adds new features that make it more expressive,
+flexible,
+and powerful than C,
+such as:
 
-.NET is a free and open-source framework, which means that it is available for anyone to use and modify. It is also a very popular framework, with millions of developers around the world using it to build their applications.
+- Classes: user-defined types that encapsulate data and behavior
+- Inheritance: a mechanism for creating new classes from existing ones
+- Polymorphism: a feature that allows different objects to respond differently to the same message
+- Templates: a technique for writing generic code that works with different types
+- Exceptions: a way of handling errors and abnormal situations
+- Standard Template Library (STL): a collection of ready-to-use containers,
+algorithms,
+and iterators
 
-## Why use .NET?
+C++ is also compatible with C code,
+meaning that you can use existing C libraries and functions in your C++ programs. However,
+C++ is not a strict superset of C,
+meaning that some valid C code may not compile or run correctly in C++. For example,
 
-There are many reasons why you might want to use .NET to build your applications. Some of the reasons include:
+- Some keywords are reserved in C++ but not in C (e.g.,
+class,
+template)
+- Some operators have different meanings or precedences in C++ than in C (e.g.,
+>>)
+- Some features are deprecated or removed in C++ but still valid in C (e.g.,
+implicit conversions from void* to other pointer types)
 
-* .NET is a powerful and flexible framework that can be used to build a wide variety of applications.
-* .NET is a cross-platform framework, which means that your applications can run on Windows, macOS, Linux, and other operating systems.
-* .NET is a free and open-source framework, which means that it is available for anyone to use and modify.
-* .NET has a large and active community of developers who can provide support and help with your projects.
+C++ is widely used for developing software systems that require high performance,
+reliability,
+and portability. Some examples of applications written in C++ are:
 
-## Getting started with .NET
+- Operating systems (e.g.,
+Windows,
+Linux)
+- Web browsers (e.g.,
+Chrome,
+Firefox)
+- Games (e.g.,
+World of Warcraft,
+Call of Duty)
+- Databases (e.g.,
+MySQL,
+MongoDB)
+- Graphics engines (e.g.,
+OpenGL,
+DirectX)
+- Machine learning frameworks (e.g.,
+TensorFlow,
+PyTorch)
 
-If you are interested in getting started with .NET, there are a few things you need to do. First, you need to install the .NET development environment. You can do this by downloading the .NET installer from the Microsoft website.
-[Image of .NET installer download page]
+C++ is also one of the most popular programming languages in the world,
+ranking among the top 10 in various surveys and indices (e.g.,
+TIOBE,
+Stack Overflow,
+GitHub).
 
-Once you have installed the .NET development environment, you can start building your applications. You can do this by using one of the many .NET programming languages, such as C#, Visual Basic, or F#.
-[Image of C# programming language logo]
-[Image of Visual Basic programming language logo]
-[Image of F# programming language logo]
+### History of C++
 
-There are also many resources available to help you get started with .NET development. You can find tutorials, articles, and books on the Microsoft website and on other websites. You can also find help from the .NET community by participating in online forums and chat rooms.
+C++ has a long and rich history that spans over four decades. Here is a brief timeline of some of the major milestones and events in the evolution of C++:
 
-## .NET Frameworks
+- 1979: C with Classes first implemented by Bjarne Stroustrup at Bell Labs
+- 1982: C with Classes reference manual published
+- 1983: C with Classes renamed to C++
+- 1985: The first edition of The C++ Programming Language by Bjarne Stroustrup published
+- 1989: The first commercial release of C++ (Cfront 2.0) by AT&T
+- 1991: The Annotated C++ Reference Manual by Margaret Ellis and Bjarne Stroustrup published
+- 1998: The first ISO/IEC standard for C++ (ISO/IEC 14882:1998) published
+- 2003: The first revision of the C++ standard (ISO/IEC 14882:2003) published
+- 2011: The second revision of the C++ standard (ISO/IEC 14882:2011), also known as C++11, published
+- 2014: The third revision of the C++ standard (ISO/IEC 14882:2014), also known as C++14, published
+- 2017: The fourth revision of the C++ standard (ISO/IEC 14882:2017), also known as C++17, published
+- 2020: The fifth revision of the C++ standard (ISO/IEC 14882:2020), also known as C++20, published
 
-There are many different .NET frameworks available, each with its own strengths and weaknesses. Some of the most popular .NET frameworks include:
+Each revision of the C++ standard introduces new features and improvements to the language and the library. Some of the notable features added in each revision are:
 
-| Framework | Description |
-|-----|---|
-| .NET Framework  | ![Image of .NET Framework logo](../../../static/img/net-framework.png#thumbnail) The original .NET framework, which is still widely used for building Windows applications. It is a managed execution environment that provides a standard set of APIs for building applications. |
-| .NET Core | ![Image of .NET Core logo](../../../static/img/core-logo_white_border.png#thumbnail) A cross-platform version of the .NET Framework, which is designed to run on Windows, macOS, Linux, and other operating systems. It is a smaller and more lightweight framework than the .NET Framework, which makes it ideal for building applications that need to be portable. |
-| .NET Standard | ![Image of .NET Standard logo](../../../static/img/ASP.net_.png#thumbnail) A set of APIs that are common to all .NET frameworks, which allows developers to write applications that can run on any .NET platform. This makes it easy to build applications that can be used on a variety of devices and operating systems. |
-| Xamarin | ![Image of Xamarin logo](../../../static/img/xamarin-logo-png-transparent-1024x912.png#thumbnail)  A framework for building cross-platform mobile applications. It allows developers to use C# to build applications that can run on iOS, Android, and macOS. |
-| Unity | ![Image of Unity logo](../../../static/img/3048561-middle.png#thumbnail) A framework for building cross-platform games. It allows developers to use C# to build games that can run on Windows, macOS, Linux, iOS, Android, and other platforms. |
-| .NET Maui | ![Image of Maui logo](../../../static/img/maui.png#thumbnail) A new cross-platform framework for building native mobile and desktop applications with C# and XAML. It is a successor to Xamarin Forms and is designed to be more modern, performant, and extensible. |
+- C++11: auto, decltype, nullptr, constexpr, range-based for loop, lambda expressions, move semantics, smart pointers, initializer lists, variadic templates, static assertions, type traits, etc.
+- C++14: generic lambdas, variable templates, relaxed constexpr, binary literals, digit separators, etc.
+- C++17: structured bindings, if constexpr, fold expressions, inline variables, std::optional, std::variant, std::any, std::string_view, etc.
+- C++20: concepts, ranges, modules, coroutines, designated initializers, three-way comparison operator (<=>), std::span, std::format, etc.
 
-## Versions of .NET
+### Advantages and Disadvantages of C++
 
-| Version | Release date | Support status | Main features |
-|---------|--------------|----------------|---------------|
-| .NET 1.0 | February 2002 | Out of support | First version of .NET Framework |
-| .NET 1.1 | April 2003 | Out of support | ASP.NET mobile controls, built-in support for ODBC and databases |
-| .NET 2.0 | November 2005 | Out of support | Generics, nullable types, anonymous methods, partial classes |
-| .NET 3.0 | November 2006 | Out of support | Windows Presentation Foundation (WPF), Windows Communication Foundation (WCF), Windows Workflow Foundation (WF), Windows CardSpace |
-| .NET 3.5 | November 2007 | Out of support | LINQ, lambda expressions, extension methods, anonymous types |
-| .NET 4.0 | April 2010 | Out of support | Dynamic language runtime (DLR), parallel programming, code contracts |
-| .NET 4.5 | August 2012 | Out of support | Async and await, caller info attributes, Zip compression |
-| .NET 4.5.1 | October 2013 | Out of support | Automatic binding redirection, performance and debugging improvements |
-| .NET 4.5.2 | May 2014 | Out of support | High DPI support, ASP.NET app suspension |
-| .NET 4.6 | July 2015 | Out of support | RyuJIT compiler, SIMD support, string interpolation |
-| .NET 4.6.1 | November 2015 | Out of support | WPF improvements, HTTP/2 support |
-| .NET 4.6.2 | August 2016 | Out of support | Cryptography enhancements, SQL client improvements |
-| .NET 4.7 | April 2017 | Out of support | High DPI enhancements, touch support for WPF |
-| .NET 4.7.1 | October 2017 | Out of support | Configuration builders, ASP.NET forms authentication |
-| .NET 4.7.2 | April 2018 | Out of support | Dependency injection for ASP.NET Web Forms, Brotli compression |
-| .NET Core 1.0 | June 2016 | Out of support | First version of .NET Core |
-| .NET Core 1.1 | November 2016 | Out of support | Azure App Service and AWS support, Docker tools |
-| .NET Core 2.0 | August 2017 | Out of support | Expanded API surface, Razor Pages for ASP.NET Core |
-| .NET Core 2.1 LTS| May 2018  	| Supported until August 2021  	|  2021	Global tools, Generic Span and Generic Memory, HttpClient enhancements |
-| .NET Core 2.2  	| December 2018  	| Out of support  	| Tiered compilation, health checks for ASP.NET Core  	|
-| .NET Core 3.0  	| September 2019  	| Out of support  	| Support for desktop apps (WPF and Windows Forms), C# 8 features  	|
-| .NET Core 3.1 LTS  	| December 2019  	| Supported until December 2022  	| Blazor WebAssembly preview, partial class support for Razor components  	|
-|. NET Framework4.8|.NET releases in odd-numbered years are Long-Term Support (LTS) releases and are supported for three years.|April2019|. NET Framework is the last major version of.NET Framework.|Modern browser and modern media controls,. NET Framework is the last major version of.NET Framework., high DPI improvements|
-|. NET (formerly known as.NET Core) is the next major release after.NET Core.|November2020|. NET releases in odd-numbered years are Long-Term Support (LTS) releases and are supported for three years.|Single file applications,. NET MAUI,. NET CLI tools for Windows Forms and WPF,. NET Interactive notebooks,C#9 features|
-|. NET6|.NET releases in even-numbered years are Standard-Term Support (STS) releases and are supported for18 months.|November2021|. NET Multi-platform App UI (. NET MAUI), Blazor desktop apps,. NET Hot Reload,. NET CLI tools for ASP.NET Core,C#10 features|
-|. NET7|.NET releases in even-numbered years are Standard-Term Support (STS) releases and are supported for18 months.|November2022|. NET 7 is the third major release in Microsoft’s.NET unification journey.|On-stack replacement (OSR), profile-guided optimization (PGO), improved code generation for Arm64, native AOT, System.Text.Json serialization improvements, generic math, regular expressions improvements, .NET libraries improvements, observability improvements, P/Invoke source generation|
-|. NET8|.NET releases in odd-numbered years are Long-Term Support (LTS) releases and are supported for three years.|November2023|. NET 8 is the next major release after.NET 7.|TBD|
+Like any programming language,
+C++ has its own strengths and weaknesses. Here are some of the advantages and disadvantages of using C++:
 
+#### Advantages
 
-*LTS stands for Long-Term Support
+- **Performance**: C++ is one of the fastest programming languages,
+thanks to its low-level features and direct access to hardware resources. It allows you to write code that is close to the machine level,
+optimizing memory usage and execution speed. It also supports inline assembly,
+allowing you to use processor-specific instructions for critical tasks.
+- **Portability**: C++ is a cross-platform language,
+meaning that you can write code that can run on different operating systems and architectures with minimal or no changes. It also supports multiple compilation models,
+such as ahead-of-time (AOT),
+just-in-time (JIT),
+and hybrid compilation.
+- **Flexibility**: C++ is a multi-paradigm language,
+meaning that you can use different programming styles and techniques to solve different problems. It supports procedural,
+object-oriented,
+generic,
+and functional programming paradigms. It also allows you to mix and match features from different paradigms,
+creating your own hybrid solutions.
+- **Expressiveness**: C++ is a rich and expressive language,
+meaning that you can write code that is concise,
+clear,
+and elegant. It provides many features that enable you to write high-level abstractions without sacrificing performance or control. It also supports operator overloading,
+allowing you to define custom semantics for existing operators.
+- **Compatibility**: C++ is compatible with C code,
+meaning that you can use existing C libraries and functions in your C++ programs. It also supports interoperability with other languages,
+such as Java,
+Python,
+and .NET languages. You can use foreign function interfaces (FFI),
+such as JNI,
+ctypes,
+and SWIG,
+to call functions written in other languages from your C++ code.
 
-## Conclusion
+#### Disadvantages
 
-.NET is a powerful and flexible framework that can be used to build a wide variety of applications. It is a free and open-source framework, and it has a large and active community of developers who can provide support and help with your projects. If you are interested in building applications, .NET is a great place to start.
+- **Complexity**: C++ is a complex language,
+meaning that it has many features and rules that can be hard to learn and master. It also has many pitfalls and traps that
+
+Sure, I can keep going. Here is the rest of the article:
+
+can lead to bugs and errors. It also has many legacy features and quirks that are maintained for backward compatibility, but may not be relevant or useful for modern programming.
+
+- **Memory management**: C++ requires manual memory management, meaning that you have to allocate and deallocate memory for your objects and data structures. It also allows you to manipulate raw memory using pointers and references, which can be dangerous and error-prone. You have to be careful about memory leaks, dangling pointers, buffer overflows, and other memory-related issues.
+
+- **Compilation time**: C++ has a long compilation time, meaning that it takes a lot of time and resources to compile and link your code. It also requires a separate compilation step for each source file, which can slow down the development process. You have to use preprocessor directives, header files, and forward declarations to avoid multiple definitions and circular dependencies.
+
+- **Debugging**: C++ is hard to debug, meaning that it is difficult to find and fix errors and bugs in your code. It also has limited support for runtime error checking and exception handling, which can make your program crash or behave unpredictably. You have to use external tools, such as debuggers, profilers, and static analyzers, to inspect and improve your code quality.
