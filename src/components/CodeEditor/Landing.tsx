@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import CodeEditorWindow from "./CodeEditorWindow";
-import axios, { AxiosResponse } from "axios";
 import { languageOptions } from "./constants/languageOptions";
 import { defineTheme } from "./lib/defineTheme";
 import useKeyPress from "./hooks/useKeyPress";
@@ -26,6 +25,12 @@ import {
   GetExampleLanguageCode,
   ExampleCode,
 } from "./utils/getExampleLanguageCode";
+import {
+  compileCode,
+  checkStatus,
+  FormData,
+  encodeBase64,
+} from "./utils/codeApi";
 
 const example_codes = GetExampleLanguageCode();
 
@@ -80,24 +85,6 @@ const Landing: React.FC = () => {
     }
   };
 
-  // Define the form data type
-  type FormData = {
-    language_id: string;
-    source_code: string;
-    stdin: string;
-  };
-
-  // Define the response data type
-  type ResponseData = {
-    token: string;
-  };
-
-  // Define a function to encode data in base64
-  const encodeBase64 = (data: string) => {
-    return btoa(data);
-  };
-
-  // Define a function to handle the compile request
   const handleCompile = () => {
     setProcessing(true);
 
@@ -109,51 +96,32 @@ const Landing: React.FC = () => {
       stdin: encodeBase64(customInput),
     };
 
-    // Create the options object
-    const options: any = {
-      method: "POST",
-      url: process.env.REACT_APP_RAPID_API_URL,
-      params: { base64_encoded: "true", fields: "*" },
-      headers: {
-        "content-type": "application/json",
-        "Content-Type": "application/json",
-        "X-RapidAPI-Host": process.env.REACT_APP_RAPID_API_HOST,
-        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
-      },
-      data: formData,
-    };
-
     // Send the request and handle the response
-    axios
-      .request<ResponseData>(options)
-      .then(function (response) {
+    compileCode(formData)
+      .then(function (response: any) {
         console.log("res.data", response.data);
         const token = response.data.token;
-        checkStatus(token);
+        checkStatusLanding(token);
       })
       .catch((err) => {
         let error = err.response ? err.response.data : err;
         setProcessing(false);
-        console.log(error);
+        // Added an error catching structure here
+        // Show an error message to the user
+        showErrorSnackbar(
+          `An error occurred while sending the request. Please try again.`
+        );
+        // Log the error details to the console
+        console.error(`Error details: ${error.message}`);
       });
   };
 
   // Define a function to check the status of the request
-  const checkStatus = async (token: string) => {
+  const checkStatusLanding = async (token: string) => {
     var timeoutId: number;
-    // Create the options object
-    const options: any = {
-      method: "GET",
-      url: process.env.REACT_APP_RAPID_API_URL + "/" + token,
-      params: { base64_encoded: "true", fields: "*" },
-      headers: {
-        "X-RapidAPI-Host": process.env.REACT_APP_RAPID_API_HOST,
-        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
-      },
-    };
     try {
       // Send the request and get the response
-      let response: AxiosResponse = await axios.request(options);
+      let response: any = await checkStatus(token);
       let statusId: number = response.data.status_id;
       console.log("statusId", statusId);
       // Processed - we have a result
@@ -169,7 +137,7 @@ const Landing: React.FC = () => {
       } else if (statusId === 1 || statusId === 2) {
         // Still processing or error
         setTimeout(() => {
-          checkStatus(token);
+          checkStatusLanding(token);
         }, 2000);
         return;
       } else {
@@ -183,9 +151,14 @@ const Landing: React.FC = () => {
         return;
       }
     } catch (err) {
-      console.log("err", err);
       setProcessing(false);
-      showErrorSnackbar();
+      // Added an error catching structure here
+      // Show an error message to the user
+      showErrorSnackbar(
+        `An error occurred while checking the status. Please try again.`
+      );
+      // Log the error details to the console
+      console.error(`Error details: ${err.message}`);
     }
   };
 
@@ -368,7 +341,7 @@ const Landing: React.FC = () => {
             /> */}
               <Button
                 onClick={handleCompile}
-                disabled={!code}
+                disabled={!code || processing}
                 sx={{
                   mt: 4,
                   border: 2,
