@@ -11,6 +11,7 @@ interface BlankProps {
   showResults: boolean;
   correctAnswer: string[]; // change this type
   setUserAnswer: React.Dispatch<React.SetStateAction<Record<string, string>>>;
+  setShowResults: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 type Action =
@@ -42,6 +43,7 @@ export const Blank = ({
   showResults,
   correctAnswer,
   setUserAnswer,
+  setShowResults,
 }: BlankProps) => {
   const [state, dispatch] = useReducer(reducer, { userAnswer: undefined });
 
@@ -50,6 +52,7 @@ export const Blank = ({
     dispatch({ type: "delete" });
     // Update the parent state as well
     setUserAnswer(() => ({}));
+    setShowResults(false);
   };
 
   const getIcon = () => {

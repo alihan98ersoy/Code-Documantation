@@ -11,6 +11,7 @@ interface SentenceProps {
   showResults: boolean;
   question: Question;
   setUserAnswer: React.Dispatch<React.SetStateAction<Record<string, string>>>;
+  setShowResults: React.Dispatch<React.SetStateAction<boolean>>;
   index: number;
   totalQuestions: number;
 }
@@ -22,6 +23,7 @@ export const Sentence = ({
   showResults,
   question,
   setUserAnswer,
+  setShowResults,
   index,
   totalQuestions,
 }: SentenceProps) => {
@@ -35,7 +37,6 @@ export const Sentence = ({
       sx={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
       }}
     >
       {/* Dinamik hale getirilecek */}
@@ -65,6 +66,7 @@ export const Sentence = ({
                 showResults={showResults}
                 correctAnswer={question.correctAnswer} // pass an array
                 setUserAnswer={setUserAnswer}
+                setShowResults={setShowResults}
               />
             )}
           </React.Fragment>

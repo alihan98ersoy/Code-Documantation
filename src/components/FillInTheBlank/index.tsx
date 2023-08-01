@@ -80,6 +80,7 @@ const FillInTheBlank: React.FC<FillInTheBlankProps> = ({ questions }) => {
               sentenceParts={sentenceParts}
               userAnswers={userAnswers}
               setUserAnswer={setUserAnswers}
+              setShowResults={setShowResults}
               answers={currentQuestion.answers}
               question={currentQuestion}
               showResults={showResults}
