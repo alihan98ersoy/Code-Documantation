@@ -40,3 +40,11 @@ img[src*="#thumbnail"] {
   margin-right: 10px;
   display: grid;
 }
+
+@media screen and (max-width: 767px) {
+  .navbar__title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+}
