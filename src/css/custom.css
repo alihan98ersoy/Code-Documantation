@@ -48,3 +48,16 @@ img[src*="#thumbnail"] {
     line-height: 1.2;
   }
 }
+
+
+:root {
+  --markprompt-primary: #6366f1;
+  --markprompt-primaryMuted: #818cf8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --markprompt-primary: #6366f1;
+    --markprompt-primaryMuted: #818cf8;
+  }
+}
