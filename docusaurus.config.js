@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+require("dotenv").config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -157,7 +158,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       markprompt: {
-        projectKey: "sk_test_10AwR69XVZzFXqR6mHOmDH3D5Tg5GNHI",
+        projectKey: process.env.MARKPROMPT_PROJECT_KEY,
         feedback: {
           enabled: true,
         },
@@ -166,6 +167,12 @@ const config = {
         },
         search: {
           enabled: true,
+          provider: {
+            name: "algolia",
+            apiKey: process.env.ALGOLIA_API_KEY,
+            appId: "2F1APZX4WZ",
+            indexName: "umantation-net",
+          },
         },
       },
     }),
